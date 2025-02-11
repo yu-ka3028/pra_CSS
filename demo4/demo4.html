@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSSスクロールアニメーション</title>
+    <link rel="stylesheet" href="demo4.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- セクション1 -->
+      <section id="card1" class="card">
+        <img
+          src="https://i.gyazo.com/de32fe95b570a900dd88c636d4d67cc4.png"
+          alt="カード画像1"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">カードのタイトル 1</h2>
+          <p class="card-text">
+            このカードは上からフェードインするアニメーションが付いています。
+          </p>
+        </div>
+      </section>
+
+      <!-- セクション2 -->
+      <section id="card2" class="card">
+        <img
+          src="https://i.gyazo.com/927ed6721c3b4043f030900359dca0d9.jpg"
+          alt="カード画像2"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">カードのタイトル 2</h2>
+          <p class="card-text">
+            このカードは画面に表示されたら右からフェードインされます。
+          </p>
+        </div>
+      </section>
+
+      <!-- セクション3 -->
+      <section id="card3" class="card">
+        <img
+          src="https://i.gyazo.com/400807d2dba2f188a5c3e0369a3e5e27.jpg"
+          alt="カード画像3"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">カードのタイトル 3</h2>
+          <p class="card-text">こちらは左からフェードインします。</p>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const cards = document.querySelectorAll('.card');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running'; // アニメーションを再生
+            observer.unobserve(entry.target); // 一度表示したら監視を解除
+          }
+        });
+      });
+
+      cards.forEach((card) => {
+        observer.observe(card); // 各カードを監視
+      });
+    </script>
+  </body>
+</html>

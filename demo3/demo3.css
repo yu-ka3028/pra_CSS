@@ -1,0 +1,85 @@
+/* ブログカード全体 */
+.blog-card {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 500px;
+  margin: 20px auto; /* カードを中央揃え */
+}
+
+/* サムネイル画像 */
+.blog-image {
+  width: 100%; /* カード幅いっぱいに表示 */
+  height: auto; /* アスペクト比を維持 */
+}
+
+/* コンテンツ部分 */
+.blog-content {
+  padding: 20px;
+}
+
+.blog-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.blog-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.blog-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.blog-link:hover {
+  background-color: #0056b3;
+}
+
+/* フォーム部分 */
+.simple-form {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  padding: 20px; /* フォーム周囲に余白を追加 */
+}
+
+.profile-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007BFF;
+  border-radius: 5px;
+}
+
+.profile-link:hover {
+  background-color: #0056b3;
+}
+input[type="email"] {
+  padding: 10px;
+  margin-bottom: 15px; /* 入力欄とボタンの間に余白 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,95 @@
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* カードの共通スタイル */
+.card {
+  opacity: 0; /* 初期状態：非表示 */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused; /* 初期状態でアニメーションを停止 */
+}
+
+/* 1枚目：上からフェードイン */
+.card:nth-child(1) {
+  animation-name: slideInFromTop;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2枚目：右からフェードイン */
+.card:nth-child(2) {
+  animation-name: slideInFromRight;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 3枚目：左からフェードイン */
+.card:nth-child(3) {
+  animation-name: slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* カードが表示されたときにアニメーションを再生 */
+.card:target {
+  animation-play-state: running;
+}
+
+/* カード内コンテンツのスタイル */
+.card-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5em;
+}
+
+.card-text {
+  color: #666;
+}
