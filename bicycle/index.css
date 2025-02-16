@@ -1,0 +1,26 @@
+.site-title {
+  width: 120px;
+  height: 48px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0 10%;
+  box-sizing: border-box; 
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  width: 120px;
+  height: 48px;
+  color: black;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+
